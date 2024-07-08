@@ -9,42 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// type enqueryForm struct {
-// 	fullName string
-// 	email string
-// 	phoneNumber string
-// 	serviceEnguery string
-// 	additionalMessage string
-// }
-
-// type safariForm struct {
-// 	firstName string
-// 	lastName string
-// 	email string
-// 	phoneNumber string
-// 	safariDate string
-// 	arrivalDate string
-// 	noOfAdults int16
-// 	noOfChildren int16
-// 	additionalMessage string
-// }
-
-// type carHireForm struct {
-// 	firstName string
-// 	lastName string
-// 	email string
-// 	phoneNumber string
-// 	duration string
-// 	pickupDay string
-// 	additionalMessage string
-// }
-
-// type reviewForm struct {
-// 	fullName string
-// 	email string
-// 	review string
-// }
-
 func (server *Server) formHandlers(ctx *gin.Context) {
 	form := ctx.Param("form")
 
