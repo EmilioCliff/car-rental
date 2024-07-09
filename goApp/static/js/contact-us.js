@@ -20,7 +20,7 @@ function initContact(form) {
 
 				// send post request to my backend
 				if (errors.length === 0) {
-					sendContactForm(entries, "/contact-form/nairobi-tour");
+					sendContactForm(entries, "nairobi-tour");
 					return;
 				}
 			});
@@ -34,7 +34,7 @@ function initContact(form) {
 
 				// send post request to my backend
 				if (errors.length === 0) {
-					sendContactForm(entries, "/contact-form/safari");
+					sendContactForm(entries, "safari");
 					return;
 				}
 			});
@@ -48,7 +48,7 @@ function initContact(form) {
 
 				// send post request to my backend
 				if (errors.length === 0) {
-					sendContactForm(entries, "/contact-form/car-hire");
+					sendContactForm(entries, "car-hire");
 					return;
 				}
 			});
@@ -62,7 +62,7 @@ function initContact(form) {
 
 				// send post request to my backend
 				if (errors.length === 0) {
-					sendContactForm(entries, "/contact-form/enquery");
+					sendContactForm(entries, "enquery");
 					return;
 				}
 			});
@@ -74,7 +74,7 @@ function initContact(form) {
 
 			// send post request to my backend
 			if (errors.length === 0) {
-				sendContactForm(entries, "/contact-form/review");
+				sendContactForm(entries, "review");
 				return;
 			}
 		});
@@ -83,7 +83,7 @@ function initContact(form) {
 
 initContact(document.querySelector(".js-form-title").dataset.formName);
 
-export function sendContactForm(entries, url) {
+function sendContactForm(entries, formName) {
 	if (entries.serviceEnguery) {
 		switch (entries.serviceEnguery) {
 			case "0":
@@ -108,15 +108,50 @@ export function sendContactForm(entries, url) {
 		},
 		body: JSON.stringify(entries),
 	};
-	fetch(url, body)
-		.then((response) => response.json())
+	fetch(`/contact-form/${formName}`, body)
+		.then((response) => {
+			if (!response.ok) {
+				response.json().then((errorData) => {
+					setInfoMessage([false, `Failed Submitting form: ${errorData}`]);
+					return;
+				});
+			}
+			return response.json();
+		})
 		.then((data) => {
-			console.log("parsed data is: " + data);
-			// inform user submition was successfull
+			if (formName === "review"){
+				setInfoMessage([true, `Submitted successful`], true);
+			} else {
+				setInfoMessage([true, `Submitted successful`]);
+			}
 
-			// window.location.href = "/";
+			document.querySelector(`#${formName}-form`).reset()
+			// window.location.href = `/${formName}`;
 		})
 		.catch((error) => {
-			console.error("There was an error!", error);
+			setInfoMessage([false, `Error submitting form: ${error}`]);
 		});
+}
+
+function setInfoMessage(status, review) {
+	let statusInfo;
+	if (review) {
+		statusInfo = document.querySelectorAll(".error-info")[1];
+		console.log(statusInfo)
+	} else {
+		statusInfo = document.querySelector(".error-info");
+	}
+	if (status[0]) {
+		statusInfo.classList.add("success");
+		statusInfo.innerHTML = `<span>SUBMITTED</span>`;
+	} else {
+		statusInfo.classList.add("fail");
+		statusInfo.innerHTML = `Failed Submitting Form: ${status[1]}`;
+	}
+
+	setTimeout(() => {
+		statusInfo.innerHTML = "";
+		statusInfo.classList.remove("success");
+		statusInfo.classList.remove("fail");
+	}, 1000);
 }

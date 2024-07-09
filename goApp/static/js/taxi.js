@@ -1,7 +1,6 @@
 import { initMap, calculateRoute } from "./taxi-maps.js";
 import { vehicles } from "./data/vehicle.js";
 import { submitForm, getFromLocalStorage } from "./taxi-form.js";
-// import { sendContactForm } from "./contact-us.js";
 
 const today = new Date().toISOString().split("T")[0];
 document.getElementById("date").setAttribute("min", today);
@@ -893,12 +892,16 @@ function showBookSummary() {
 
 	taxiBtnsCont.innerHTML = `
 			<div class="taxi-next-btn taxi-next-btn-end taxi-btn taxi-btn-right">
+				<div class="form-done">
+					<p class="error-info"></p>
+				</div>
 				BOOKING
 				<i class="ri-arrow-right-s-line"></i>
 			</div>
 	`;
 
 	document.querySelector(".taxi-next-btn").addEventListener("click", () => {
+		let statusInfo = document.querySelector(".error-info");
 		const body = {
 			method: "POST",
 			headers: {
@@ -907,16 +910,34 @@ function showBookSummary() {
 			body: JSON.stringify(savedData),
 		};
 		fetch("/contact-form/taxi", body)
-			.then((response) => response.json())
+			// .then((response) => response.json())
+			.then((response) => {
+				if (!response.ok) {
+					response.json().then((errorData) => {
+						statusInfo.classList.add("fail");
+						statusInfo.innerHTML = `Failed Submitting Form: ${errorData}`;
+						setTimeout(() => {
+							statusInfo.innerHTML = "";
+							statusInfo.classList.remove("success");
+							statusInfo.classList.remove("fail");
+						}, 1000);
+						return;
+					});
+				}
+				return response.json();
+			})
 			.then((data) => {
-				console.log("parsed data is: " + data);
 				localStorage.clear();
-				// inform user submition was successfull
-
-				// window.location.href = "/";
+				window.location.href = "/";
 			})
 			.catch((error) => {
-				console.error("There was an error!", error);
+				statusInfo.classList.add("fail");
+				statusInfo.innerHTML = `Failed Submitting Form: ${error}`;
+				setTimeout(() => {
+					statusInfo.innerHTML = "";
+					statusInfo.classList.remove("success");
+					statusInfo.classList.remove("fail");
+				}, 1000);
 			});
 	});
 

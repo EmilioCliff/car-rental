@@ -122,7 +122,7 @@ servicesBtn.forEach((service) => {
 					<p class="service-description">
 						${services[val].Description}}
 					</p>
-					<a href="${services[val].url}}" class="btn book__now-button">BOOK NOW</a>
+					<a href="${services[val].url}" class="btn book__now-button">BOOK NOW</a>
 				</div>
 			</div>
 		`

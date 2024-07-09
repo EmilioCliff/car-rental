@@ -85,7 +85,7 @@ func jsLoad(jsFileNames []string) templ.Component {
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"></script> continue;")
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"></script> ")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -156,7 +156,7 @@ func footer() templ.Component {
 			templ_7745c5c3_Var7 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer\"><a href=\"#home\" class=\"back-top\"><div><i class=\"ri-arrow-up-s-line\"></i></div></a><div class=\"footer-content\"><div class=\"footer_about-us\"><p class=\"section-title footer-title\">ABOUT US</p><p class=\"footer-about-us\">Welcome to Andy Safaris, your ultimate partner for unforgettable adventures and seamless travel experiences in Kenya. We specialize in thrilling safari tours, reliable airport and hotel transfers, exciting Nairobi city tours, and convenient car hire services. Our dedicated team is committed to providing exceptional service, ensuring your journey through Kenya is comfortable, memorable, and full of incredible moments. Join us and discover the beauty, culture, and wildlife of Kenya with the experts!</p><div class=\"footer-socials\"><i class=\"ri-twitter-x-fill\"></i> <i class=\"ri-facebook-fill\"></i> <i class=\"ri-instagram-line\"></i> <i class=\"ri-whatsapp-line\"></i></div></div><!-- <div class=\"footer_explore\"></div> --><div class=\"footer_contact-info\"><p class=\"section-title footer-title\">CONTACT US</p><p class=\"footer-address\"><span>Address: </span>Some Address</p><div class=\"footer-contacts\"><i class=\"ri-phone-fill\"></i> +254 719 700 261</div><div class=\"footer-contacts\"><i class=\"ri-mail-fill\"></i> andysafaris@gmail.com</div></div></div><div class=\"footer_rights\">Copyright @2024 By <span>TOUR</span> All Rights Reserved</div></footer>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer\"><a href=\"#home\" class=\"back-top\"><div><i class=\"ri-arrow-up-s-line\"></i></div></a><div class=\"footer-content\"><div class=\"footer_about-us\"><p class=\"section-title footer-title\">ABOUT US</p><p class=\"footer-about-us\">Welcome to Andy Safaris, your ultimate partner for unforgettable adventures and seamless travel experiences in Kenya. We specialize in thrilling safari tours, reliable airport and hotel transfers, exciting Nairobi city tours, and convenient car hire services. Our dedicated team is committed to providing exceptional service, ensuring your journey through Kenya is comfortable, memorable, and full of incredible moments. Join us and discover the beauty, culture, and wildlife of Kenya with the experts!</p><div class=\"footer-socials\"><i class=\"ri-twitter-x-fill\"></i> <i class=\"ri-facebook-fill\"></i> <i class=\"ri-instagram-line\"></i> <i class=\"ri-whatsapp-line\"></i></div></div><!-- <div class=\"footer_explore\"></div> --><div class=\"footer_contact-info\"><p class=\"section-title footer-title\">CONTACT US</p><p class=\"footer-address\"><span>Address: </span>Some Address</p><div class=\"footer-contacts\"><i class=\"ri-phone-fill\"></i> +254 719 700 261</div><div class=\"footer-contacts\"><i class=\"ri-mail-fill\"></i> andysafariskenya@gmail.com</div></div></div><div class=\"footer_rights\">Copyright @2024 By <span>LainiTech</span> All Rights Reserved</div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

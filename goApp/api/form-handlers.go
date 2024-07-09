@@ -34,10 +34,12 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		fmt.Println(emailContent)
 
 		// send with a file or some attachhment for enquiry
-		if err := server.sender.SendMAil("Enquery Request", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
-			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
-			return
-		}
+		go func() {
+			if err := server.sender.SendMAil("Enquery Request", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com", req.Email}, []string{}, nil, nil, nil); err != nil {
+				ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
+				return
+			}
+		}()
 
 	case "safari":
 		// save to a database
@@ -59,10 +61,12 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Safari Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
-			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
-			return
-		}
+		go func() {
+			if err := server.sender.SendMAil("Safari Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com", req.Email}, []string{}, nil, nil, nil); err != nil {
+				ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
+				return
+			}
+		}()
 
 	case "nairobi-tour":
 		//save to a database
@@ -83,11 +87,12 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 
 		emailContent := buf.String()
 		fmt.Println(emailContent)
-
-		if err := server.sender.SendMAil("Nairobi - Tour Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
-			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
-			return
-		}
+		go func() {
+			if err := server.sender.SendMAil("Nairobi - Tour Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com", req.Email}, []string{}, nil, nil, nil); err != nil {
+				ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
+				return
+			}
+		}()
 
 	case "car-hire":
 		// save to the database
@@ -109,10 +114,12 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Car Hire Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
-			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
-			return
-		}
+		go func() {
+			if err := server.sender.SendMAil("Car Hire Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com", req.Email}, []string{}, nil, nil, nil); err != nil {
+				ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
+				return
+			}
+		}()
 
 	case "taxi":
 		// save to the database
@@ -134,10 +141,12 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Get A Taxi Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
-			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
-			return
-		}
+		go func() {
+			if err := server.sender.SendMAil("Get A Taxi Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com", req.ContactDetails.Email}, []string{}, nil, nil, nil); err != nil {
+				ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
+				return
+			}
+		}()
 
 	case "review":
 		// save review to the database
@@ -156,24 +165,3 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{"success": "Enquiry sent successfull"})
 }
-
-// "rideDetails":{
-// 	"pickupDay":"2024-07-19",
-// 	"pickupTime":"17:18",
-// 	"pickupLocation":"Marsabit, Kenya",
-// 	"dropoffLocation":"Moyale, Kenya",
-// 	"transferType":"one-way",
-// 	"totalDistance":"245 km",
-// 	"totalTime":"2 hours 57 mins"
-// 	},
-
-// "taxiSelected":"4",
-
-// "contactDetails":{
-// 	"firstName":"MAMA",
-// 	"lastName":"MIHA",
-// 	"email":"letgo@gmail.com",
-// 	"phoneNumber":"0909090909",
-// 	"comments":"Test ",
-// 	"paymentMethod":"2"
-// }

@@ -36,7 +36,7 @@ templ EnquiryForm() {
 				<div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
 					<div class="ride-details">
 						<p class="progress-title">ENQUIRY FORM</p>
-						<form action="" class="ride-details-form" autocomplete="off">
+						<form action="" class="ride-details-form" id="enquery-form" autocomplete="off">
 							<div class="date-input-container">
 								<label for="fullName"> FULL NAME <sup>&#x2217;</sup></label>
 								<input
@@ -95,16 +95,17 @@ templ EnquiryForm() {
 								</textarea>
 							</div>
 							<div class="btn-sections" style="margin-block: 1.5rem 2rem;">
-			// <div class="form-done">
-			// 				<p>Sent Successfull</p>
-			// </div>
-				<div
-					class="taxi-next-btn taxi-btn taxi-btn-right"
-					id="contact-form-submit"
-				>
-					SEND ENQUIRY
-				</div>
-			</div>
+								
+								<div
+									class="taxi-next-btn taxi-btn taxi-btn-right"
+									id="contact-form-submit"
+									>
+									<div class="form-done">
+										<p class="error-info"></p>
+									</div>
+									SEND ENQUIRY
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -180,9 +181,9 @@ templ EnquiryForm() {
 				</div>
 			</div>
 			// <div class="btn-sections">
-			// // <div class="form-done">
-			// // 				<p>Sent Successfull</p>
-			// // </div>
+			// <div class="form-done">
+			// 				<p>Sent Successfull</p>
+			// </div>
 			// 	<div
 			// 		class="taxi-next-btn taxi-btn taxi-btn-right"
 			// 		id="contact-form-submit"
@@ -195,6 +196,7 @@ templ EnquiryForm() {
 				<form
 					action=""
 					class="ride-details-form review-cont"
+					id="review-form"
 					autocomplete="off"
 				>
 					<div class="date-input-container">
@@ -234,6 +236,9 @@ templ EnquiryForm() {
 					style="margin-top: 1rem; margin-inline: auto"
 					id="review-btn"
 				>
+				<div class="form-done">
+										<p class="error-info"></p>
+									</div>
 					LEAVE A REVIEW
 				</div>
 			</div>
@@ -296,7 +301,7 @@ templ CarHireForm(vehicle db.Vehicle) {
             <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
                 <div class="ride-details">
                     <p class="progress-title">CAR-HIRE BOOKING FORM</p>
-                    <form action="" class="ride-details-form">
+                    <form action="" class="ride-details-form" id="car-hire-form">
 							<div class="summary-col-2">
 								<div class="date-input-container">
 									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
@@ -429,6 +434,9 @@ templ CarHireForm(vehicle db.Vehicle) {
         </div>
         <div class="btn-sections">
             <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
+			<div class="form-done">
+										<p class="error-info"></p>
+									</div>
                 BOOK CAR
                 
             </div>
@@ -492,7 +500,7 @@ templ SafariForm(safari db.Safari) {
         <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
             <div class="ride-details">
                 <p class="progress-title">SAFARI BOOKING FORM</p>
-                    <form action="" class="ride-details-form">
+                    <form action="" class="ride-details-form" id="safari-form">
 							<div class="summary-col-2">
 								<div class="date-input-container">
 									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
@@ -639,6 +647,9 @@ templ SafariForm(safari db.Safari) {
     </div>
     <div class="btn-sections">
         <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
+		<div class="form-done">
+										<p class="error-info"></p>
+									</div>
             BOOK SAFARI
             // taxi-next-btn taxi-btn taxi-btn-right 
             // <i class="ri-arrow-right-s-line"></i>
@@ -702,7 +713,7 @@ templ NairobiForm() {
             <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
                 <div class="ride-details">
                     <p class="progress-title">NAIROBI TOUR BOOKING FORM</p>
-                    <form action="" class="ride-details-form">
+                    <form action="" class="ride-details-form" id="nairobi-tour-form">
 							<div class="summary-col-2">
 								<div class="date-input-container">
 									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
@@ -846,6 +857,9 @@ templ NairobiForm() {
         </div>
         <div class="btn-sections">
             <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
+			<div class="form-done">
+										<p class="error-info"></p>
+									</div>
                 BOOK TOUR
                 // taxi-next-btn taxi-btn taxi-btn-right 
                 // <i class="ri-arrow-right-s-line"></i>
