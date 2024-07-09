@@ -20,7 +20,7 @@
 }
 
 .service-button {
-	padding: 0.5rem 1rem;
+	padding: 0.5rem .25rem;
 	text-align: center;
 	border: 1px solid rgb(177, 177, 177);
 	font-style: var(--secondary-style);
@@ -54,7 +54,7 @@
 
 	.service-content img {
 		width: 100%;
-		height: 200px;
+		height: 300px;
 		object-fit: cover;
 	}
 
@@ -96,9 +96,9 @@
 	.safari-intro {
 		margin-block: 2rem 1rem;
 		display: grid;
-		opacity: 0;
+		opacity: 1;
 		padding-inline: 1.5rem;
-		animation: slide-in 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+		/* animation: slide-in 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards; */
 	}
 
 	.safari-section-sub {
@@ -307,13 +307,18 @@
 	.car-hire-intro {
 		display: grid;
 		margin-block: 3rem 2rem;
-		opacity: 0;
-		animation: slide-in 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+		opacity: 1;
+		/* animation: slide-in 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards; */
 		padding-inline: 1.5rem;
 	}
 
 	.tables-car-container {
 		row-gap: 2rem;
+		overflow: hidden;
+	}
+
+	.car-rate-cont {
+		overflow-x: auto;
 	}
 
 	.car-rate-cont p {
@@ -530,6 +535,19 @@
 		align-items: center;
 		margin-bottom: 0.3rem;
 	}
+
+	.car-carousel-item {
+		object-fit: cover;
+		width: 10rem;
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		margin-bottom: 2rem;
+		row-gap: 2rem;
+	}
+	
 }
 
 .service-content.show {
@@ -580,7 +598,7 @@
 
 /* ==================== CALL US SECTION ===================== */
 .call__us_section {
-	margin-top: 28rem;
+	margin-top: 38rem;
 	padding-block: 5rem 1.5rem;
 }
 
@@ -594,13 +612,13 @@
 	color: var(--first-color);
 	font-size: var(--larger-font-size);
 	font-weight: var(--font-bold);
-	margin-bottom: 1rem;
+	margin-bottom: .25rem;
 }
 
 .call_us-des {
 	font-size: var(--small-font-size);
 	width: 80%;
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 }
 
 .call_us-des span {

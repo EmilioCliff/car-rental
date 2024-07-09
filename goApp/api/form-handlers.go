@@ -12,7 +12,7 @@ import (
 func (server *Server) formHandlers(ctx *gin.Context) {
 	form := ctx.Param("form")
 
-	switch (form) {
+	switch form {
 	case "enquery":
 		// save to a database
 		var req templates.EnqueryFormPost
@@ -34,7 +34,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		fmt.Println(emailContent)
 
 		// send with a file or some attachhment for enquiry
-		if err := server.sender.SendMAil("Enquery Request", emailContent, "text/plain", []string{req.Email},[]string{"clifftest33@gmail.com", "emiliocliff@gmail.com"}, nil, nil, nil); err != nil {
+		if err := server.sender.SendMAil("Enquery Request", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
 			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
 			return
 		}
@@ -59,7 +59,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Safari Booking Confirmation", emailContent, "text/plain", []string{req.Email},[]string{"clifftest33@gmail.com", "emiliocliff@gmail.com"}, nil, nil, nil); err != nil {
+		if err := server.sender.SendMAil("Safari Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
 			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
 			return
 		}
@@ -84,7 +84,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Nairobi - Tour Confirmation", emailContent, "text/plain", []string{req.Email},[]string{"clifftest33@gmail.com", "emiliocliff@gmail.com"}, nil, nil, nil); err != nil {
+		if err := server.sender.SendMAil("Nairobi - Tour Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
 			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
 			return
 		}
@@ -109,7 +109,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Car Hire Confirmation", emailContent, "text/plain", []string{req.Email}, []string{"clifftest33@gmail.com", "emiliocliff@gmail.com"}, nil, nil, nil); err != nil {
+		if err := server.sender.SendMAil("Car Hire Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
 			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
 			return
 		}
@@ -134,7 +134,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 		emailContent := buf.String()
 		fmt.Println(emailContent)
 
-		if err := server.sender.SendMAil("Get A Taxi Booking Confirmation", emailContent, "text/plain", []string{req.ContactDetails.Email}, []string{"clifftest33@gmail.com", "emiliocliff@gmail.com"}, nil, nil, nil); err != nil {
+		if err := server.sender.SendMAil("Get A Taxi Booking Confirmation", emailContent, "text/plain", []string{"clifftest33@gmail.com", "andysafariskenya@gmail.com"}, []string{}, nil, nil, nil); err != nil {
 			ctx.JSON(http.StatusInternalServerError, server.errorResponse(err))
 			return
 		}
@@ -167,9 +167,7 @@ func (server *Server) formHandlers(ctx *gin.Context) {
 // 	"totalTime":"2 hours 57 mins"
 // 	},
 
-
 // "taxiSelected":"4",
-
 
 // "contactDetails":{
 // 	"firstName":"MAMA",

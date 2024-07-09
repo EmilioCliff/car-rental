@@ -124,10 +124,9 @@
 	.nav__list {
 		flex-direction: column;
 		padding-block: 5rem 2rem;
-		padding-inline: 5rem;
+		padding-left: 1rem;
 		row-gap: 3rem;
 		align-items: start;
-		width: 70%;
 		height: 100%;
 	}
 
@@ -147,6 +146,8 @@
 		color: var(--title-color);
 		padding: 0.3rem 0.8rem;
 		font-size: var(--normal-font-size);
+		display: flex;
+		align-items: center;
 	}
 	.nav__contact {
 		border-left: 0;
@@ -163,7 +164,7 @@
 
 	.nav__toogle {
 		visibility: visible;
-		top: 1rem;
+		/* top: 2rem; */
 		right: 1.5rem;
 		font-size: var(--larger-font-size);
 		color: var(--body-color);

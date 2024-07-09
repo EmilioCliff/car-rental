@@ -13,7 +13,7 @@ templ jsLoad(jsFileNames []string) {
     for _, jsFileName := range jsFileNames {
         if len(jsFileName) > 15 {
             <script src={ string(templ.URL(fmt.Sprintf("%s", jsFileName))) }></script>    
-            continue;
+            // continue;
         }
         <script src={ string(templ.URL(fmt.Sprintf("/static/js/%s.js", jsFileName))) } type="module"></script>
     }
@@ -46,7 +46,7 @@ templ header() {
                     </div>
                     <div class="contact__container">
                         <i class="ri-phone-fill phone__icon" id="js-phone-icon"></i>
-                        <a href="#" class="nav__contact">+254 000 000 000</a>
+                        <a href="#" class="nav__contact">+254 719 700 261</a>
                     </div>
                     <div class="nav__toogle" id="js-toogle-btn">
                         <i class="ri-apps-2-line"></i>
@@ -82,16 +82,16 @@ templ footer() {
 					<p class="footer-address"><span>Address: </span>Some Address</p>
 					<div class="footer-contacts">
 						<i class="ri-phone-fill"></i>
-						254700000000
+						+254 719 700 261
 					</div>
 					<div class="footer-contacts">
 						<i class="ri-mail-fill"></i>
-						example@gmail.com
+						andysafariskenya@gmail.com
 					</div>
 				</div>
 			</div>
 			<div class="footer_rights">
-				Copyright @2024 By <span>TOUR</span> All Rights Reserved
+				Copyright @2024 By <span>LainiTech</span> All Rights Reserved
 			</div>
 		</footer>
 }
@@ -265,7 +265,6 @@ templ BaseTemplate(cssFileNames, jsFileNames []string, body templ.Component) {
 
     // load required js
     @jsLoad(jsFileNames)
-    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
 	</body>
 </html>
 }

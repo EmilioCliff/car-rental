@@ -1,4 +1,5 @@
 import { getKenyaBounds } from "./taxi-maps.js";
+import { services } from "./data/services.js";
 
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
@@ -99,16 +100,35 @@ export async function initIndexMap() {
 initIndexMap();
 
 // ============================= SERVICE ==========================
+let serviceContainer = document.getElementById("service-content-container")
 let servicesBtn = document.querySelectorAll(".service-button");
 servicesBtn.forEach((service) => {
 	service.addEventListener("click", () => {
 		document
 			.querySelector(".service-active")
 			.classList.remove("service-active");
-		document.querySelector(".show").classList.remove("show");
-		const val = service.dataset.jsData;
 		service.classList.add("service-active");
-		document.querySelector(`.js-${val}`).classList.add("show");
+
+		const val = service.dataset.jsData;
+
+		serviceContainer.innerHTML = `
+			<div class="service-content js-hire">
+				<img src="${services[val].Image}" alt="" />
+				<div class="service-des">
+					<p class="service-subtitle section-subtitle">
+						SERVICE IS ALWAYS THE BEST
+					</p>
+					<p class="service-title section-title">${services[val].Title}</p>
+					<p class="service-description">
+						${services[val].Description}}
+					</p>
+					<a href="${services[val].url}}" class="btn book__now-button">BOOK NOW</a>
+				</div>
+			</div>
+		`
+		// document.querySelector(".show").classList.remove("show");
+		// const val = service.dataset.jsData;
+		// document.querySelector(`.js-${val}`).classList.add("show");
 	});
 });
 
@@ -142,7 +162,7 @@ let interval = setInterval(function () {
 	if (carouselRunning) {
 		showNextReview();
 	}
-}, 4000);
+}, 6000);
 
 function showNextReview() {
 	if (currentIndex === lastIndex) {

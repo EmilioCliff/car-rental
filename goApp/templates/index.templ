@@ -227,67 +227,69 @@ templ HomeBody() {
 						<div class="service-button" data-js-data="safari">SAFARIS</div>
 						<div class="service-button" data-js-data="hire">CAR HIRE</div>
 					</div>
-					<div class="service-content show js-taxi">
-						<img src="/static/images/taxi2.jpg" alt="" />
-						<div class="service-des">
-							<p class="service-subtitle section-subtitle">
-								SERVICE IS ALWAYS THE BEST
-							</p>
-							<p class="service-title section-title">TAKE YOU ANYWHERE</p>
-							<p class="service-description">
-								Start and end your journey stress-free with our reliable airport and hotel transfer services. Whether you're traveling for business or leisure, our professional drivers ensure timely pickups and comfortable rides to your destination. Enjoy the convenience of our easy booking process and exceptional service. Book your transfer today and travel with confidence!
-							</p>
-							<a href="/get-taxi" class="btn book__now-button">BOOK NOW</a>
+					<div id="service-content-container">
+						<div class="service-content show js-taxi">
+							<img src="/static/images/taxi2.jpg" alt="" />
+							<div class="service-des">
+								<p class="service-subtitle section-subtitle">
+									SERVICE IS ALWAYS THE BEST
+								</p>
+								<p class="service-title section-title">TAKE YOU ANYWHERE</p>
+								<p class="service-description">
+									Start and end your journey stress-free with our reliable airport and hotel transfer services. Whether you're traveling for business or leisure, our professional drivers ensure timely pickups and comfortable rides to your destination. Enjoy the convenience of our easy booking process and exceptional service. Book your transfer today and travel with confidence!
+								</p>
+								<a href="/get-taxi" class="btn book__now-button">BOOK NOW</a>
+							</div>
 						</div>
 					</div>
-					<div class="service-content js-nairobi">
-						<img src="/static/images/nairobi2.jpg" alt="" />
-						<div class="service-des">
-							<p class="service-subtitle section-subtitle">
-								SERVICE IS ALWAYS THE BEST
-							</p>
-							<p class="service-title section-title">
-								TOUR THE HEART OF AFRICA
-							</p>
-							<p class="service-description">
-								Discover the vibrant heart of Kenya with our exclusive Nairobi tours. Visit iconic landmarks like the Giraffe Centre, David Sheldrick Wildlife Trust, and the Karen Blixen Museum. Experience the rich culture, stunning landscapes, and unique wildlife of Nairobi. Join us for an unforgettable adventure in Kenya's bustling capital. Book your Nairobi tour today and let the exploration begin!
-							</p>
-							<a href="/nairobi-tour" class="btn book__now-button">BOOK NOW</a>
-						</div>
-					</div>
-					<div class="service-content js-safari">
-						<img src="/static/images/twoElephants.jpg" alt="" />
-						<div class="service-des">
-							<p class="service-subtitle section-subtitle">
-								SERVICE IS ALWAYS THE BEST
-							</p>
-							<p class="service-title section-title">NATURE'S HIDDEN WONDERs</p>
-							<p class="service-description">
-								Embark on the adventure of a lifetime with our expertly guided safaris across Kenya's breathtaking landscapes. Witness the majestic Big Five in their natural habitat, explore the iconic Maasai Mara, and immerse yourself in the vibrant local cultures. Discover the wild beauty of Kenya and create memories that will last forever. Book your safari today and let the journey begin!
-							</p>
-							<a href="/safaris" class="btn book__now-button">BOOK NOW</a>
-						</div>
-					</div>
-					<div class="service-content js-hire">
-						<img src="/static/images/carYard2.webp" alt="" />
-						<div class="service-des">
-							<p class="service-subtitle section-subtitle">
-								SERVICE IS ALWAYS THE BEST
-							</p>
-							<p class="service-title section-title">GET CARS FROM US</p>
-							<p class="service-description">
-								Experience the freedom of the open road with our reliable car hire services. Whether you need a vehicle for business, leisure, or exploring Kenya's stunning landscapes, we offer a wide range of well-maintained cars to suit your needs. Enjoy competitive rates, flexible rental options, and exceptional customer service. Book your car hire today and drive away with ease!
-							</p>
-							<a href="/car-hire" class="btn book__now-button">BOOK NOW</a>
-						</div>
-					</div>
+					// <div class="service-content js-nairobi">
+					// 	<img src="/static/images/nairobi2.jpg" alt="" />
+					// 	<div class="service-des">
+					// 		<p class="service-subtitle section-subtitle">
+					// 			SERVICE IS ALWAYS THE BEST
+					// 		</p>
+					// 		<p class="service-title section-title">
+					// 			TOUR THE HEART OF AFRICA
+					// 		</p>
+					// 		<p class="service-description">
+					// 			Discover the vibrant heart of Kenya with our exclusive Nairobi tours. Visit iconic landmarks like the Giraffe Centre, David Sheldrick Wildlife Trust, and the Karen Blixen Museum. Experience the rich culture, stunning landscapes, and unique wildlife of Nairobi. Join us for an unforgettable adventure in Kenya's bustling capital. Book your Nairobi tour today and let the exploration begin!
+					// 		</p>
+					// 		<a href="/nairobi-tour" class="btn book__now-button">BOOK NOW</a>
+					// 	</div>
+					// </div>
+					// <div class="service-content js-safari">
+					// 	<img src="/static/images/twoElephants.jpg" alt="" />
+					// 	<div class="service-des">
+					// 		<p class="service-subtitle section-subtitle">
+					// 			SERVICE IS ALWAYS THE BEST
+					// 		</p>
+					// 		<p class="service-title section-title">NATURE'S HIDDEN WONDERs</p>
+					// 		<p class="service-description">
+					// 			Embark on the adventure of a lifetime with our expertly guided safaris across Kenya's breathtaking landscapes. Witness the majestic Big Five in their natural habitat, explore the iconic Maasai Mara, and immerse yourself in the vibrant local cultures. Discover the wild beauty of Kenya and create memories that will last forever. Book your safari today and let the journey begin!
+					// 		</p>
+					// 		<a href="/safaris" class="btn book__now-button">BOOK NOW</a>
+					// 	</div>
+					// </div>
+					// <div class="service-content js-hire">
+					// 	<img src="/static/images/carYard2.webp" alt="" />
+					// 	<div class="service-des">
+					// 		<p class="service-subtitle section-subtitle">
+					// 			SERVICE IS ALWAYS THE BEST
+					// 		</p>
+					// 		<p class="service-title section-title">GET CARS FROM US</p>
+					// 		<p class="service-description">
+					// 			Experience the freedom of the open road with our reliable car hire services. Whether you need a vehicle for business, leisure, or exploring Kenya's stunning landscapes, we offer a wide range of well-maintained cars to suit your needs. Enjoy competitive rates, flexible rental options, and exceptional customer service. Book your car hire today and drive away with ease!
+					// 		</p>
+					// 		<a href="/car-hire" class="btn book__now-button">BOOK NOW</a>
+					// 	</div>
+					// </div>
 				</div>
 			</div>
 		</section>
 		<section class="call__us_section">
 			<div class="call__us_content">
 				<p class="call_us-title">CALL US TO BOOK A TAXI</p>
-				<p class="call_us-number">(+254) 700 000 000</p>
+				<p class="call_us-number">(+254) 719 700 261</p>
 				<p class="call_us-des">
 					Don't let travel stress ruin your trip! Call us now or book online for reliable and comfortable <span>airport and hotel transfers</span>. Enjoy peace of mind with our professional drivers and seamless service. Your journey begins with us!
 				</p>
