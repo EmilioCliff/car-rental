@@ -15,7 +15,7 @@ export const services = {
         Image: "/static/images/twoElephants.jpg",
         Title: "NATURE'S HIDDEN WONDERs",
         Description: "Embark on the adventure of a lifetime with our expertly guided safaris across Kenya's breathtaking landscapes. Witness the majestic Big Five in their natural habitat, explore the iconic Maasai Mara, and immerse yourself in the vibrant local cultures. Discover the wild beauty of Kenya and create memories that will last forever. Book your safari today and let the journey begin!",
-        url: "/safari",
+        url: "/safaris",
     },
     hire: {
         Image: "/static/images/carYard2.webp",
